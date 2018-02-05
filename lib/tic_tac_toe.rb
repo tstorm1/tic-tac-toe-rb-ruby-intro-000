@@ -23,8 +23,9 @@ def input_to_index(user_input)
   user_input.to_i - 1
 end
 
+#move(board, 0, "O")
+
 def move(board, index, default_player)
-  default_player = current_player(board)
   board[index] = default_player
 end
 
@@ -40,7 +41,10 @@ def valid_move?(board, index)
 end
 
 def turn(board)
-    default_player = "X"
+#    default_player = "X"
+
+    default_player = current_player(board)
+
     puts "Please enter 1-9:"
     user_input = gets.strip
     index = input_to_index(user_input)
