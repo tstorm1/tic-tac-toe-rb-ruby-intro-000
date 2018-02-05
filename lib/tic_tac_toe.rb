@@ -117,22 +117,21 @@ end
 
 def play(board)
   counter = 0
-  while counter < 9
+  until over?(board)
     turn(board)
     counter += 1
-    if over?(board) && winner(board) == "X"
+  end
+    
+  if over?(board) && winner(board) == "X"
       puts "Congratulations player X, you won!"
       break
-    elsif over?(board) && winner(board) == "O"
+  elsif over?(board) && winner(board) == "O"
       puts "Congratulations player O, you won!"
       break
-    elsif over?(board) && draw?(board) == true
+  elsif over?(board) && draw?(board) == true
       puts "Cat's Game!"
       break
-    elsif counter > 9
-      break
-    else
+  else
       false
-    end
   end
 end
