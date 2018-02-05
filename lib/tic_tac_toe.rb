@@ -116,10 +116,10 @@ def winner(board)
 end
 
 def play(board)
-  counter = 0
+  #counter = 0
   until over?(board)
     turn(board)
-    counter += 1
+  #  counter += 1
   end
 
   if over?(board) && winner(board) == "X"
