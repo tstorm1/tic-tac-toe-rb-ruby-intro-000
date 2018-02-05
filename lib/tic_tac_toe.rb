@@ -116,22 +116,13 @@ def winner(board)
 end
 
 def play(board)
-  #counter = 0
   until over?(board)
     turn(board)
-  #  counter += 1
   end
 
-  if over?(board) && winner(board) == "X"
-      puts "Congratulations player X, you won!"
-      break
-  elsif over?(board) && winner(board) == "O"
-      puts "Congratulations player O, you won!"
-      break
-  elsif over?(board) && draw?(board) == true
+  if over?(board) && draw?(board) == false
+      puts "Congratulations player #{winner(board)}, you won!"
+  else over?(board) && draw?(board) == true
       puts "Cat's Game!"
-      break
-  else
-      false
   end
 end
