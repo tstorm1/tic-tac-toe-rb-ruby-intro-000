@@ -121,7 +121,7 @@ def play(board)
     turn(board)
     counter += 1
   end
-    
+
   if over?(board) && winner(board) == "X"
       puts "Congratulations player X, you won!"
       break
